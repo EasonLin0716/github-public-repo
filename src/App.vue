@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <Repos />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Repos from './components/Repos.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Repos
   }
 }
 </script>
