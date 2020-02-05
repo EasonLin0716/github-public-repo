@@ -41,11 +41,11 @@ export default {
   },
   created() {
     const loadDataNum = Math.floor(window.screen.height / 140)
-    const page = 2
+    let page = 2
     const self = this
     self.fetchData(loadDataNum, 1)
     document.addEventListener('scroll', function() {
-      if (window.scrollY + 500 > document.body.offsetHeight) {
+      if (window.scrollY + 1000 > document.body.offsetHeight) {
         self.fetchData(loadDataNum, page)
         page += 1
       }
