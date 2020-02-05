@@ -45,7 +45,7 @@ export default {
     const self = this
     self.fetchData(loadDataNum, 1)
     document.addEventListener('scroll', function() {
-      if (window.scrollY + 1000 > document.body.offsetHeight) {
+      if (window.scrollY + 700 > document.body.offsetHeight) {
         self.fetchData(loadDataNum, page)
         page += 1
       }
