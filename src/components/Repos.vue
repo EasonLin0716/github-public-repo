@@ -32,7 +32,7 @@ export default {
         const { data } = await axios.get(
           `https://api.github.com/users/EasonLin0716/repos?per_page=${num}&page=${page}`
         )
-        if (data.length) return
+        if (!data.length) return
         data.forEach(repo => this.repos.push(repo))
       } catch (error) {
         throw new Error()
