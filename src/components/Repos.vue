@@ -47,9 +47,10 @@ export default {
 
     document.addEventListener('scroll', function() {
       if (
-        document.documentElement.scrollTop + window.innerHeight >
-        document.body.offsetHeight
+        Math.ceil(document.documentElement.scrollTop + window.innerHeight) ===
+        document.documentElement.offsetHeight
       ) {
+        console.log('fetch!!!')
         self.fetchData(loadDataNum, page)
         page += 1
       }
