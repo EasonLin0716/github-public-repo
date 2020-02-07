@@ -51,14 +51,16 @@ export default {
     let page = 2
     const self = this
     self.fetchData(loadDataNum, 1)
-    if (
-      Math.ceil(window.pageYOffset + window.innerHeight) ===
-      document.documentElement.offsetHeight
-    ) {
-      console.log('fetch!!!')
-      self.fetchData(loadDataNum, page)
-      page += 1
-    }
+    document.addEventListener('scroll', function() {
+      if (
+        Math.ceil(window.pageYOffset + window.innerHeight) ===
+        document.documentElement.offsetHeight
+      ) {
+        console.log('fetch!!!')
+        self.fetchData(loadDataNum, page)
+        page += 1
+      }
+    })
   }
 }
 </script>
