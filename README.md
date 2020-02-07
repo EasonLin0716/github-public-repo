@@ -7,8 +7,11 @@ See demo at [here](https://easonlin0716.github.io/github-public-repo/#)
 ## Tools
 
 Vue.js
+
 Axios
+
 Bootstrap
+
 ua-parser-js (for getting browser name)
 
 ## Project setup
