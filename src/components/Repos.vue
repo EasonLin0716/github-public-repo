@@ -12,6 +12,7 @@
         <a :href="repo.html_url" class="card-link">Link to the repo</a>
       </div>
     </div>
+    Using broswer: {{ browserName }}
   </div>
 </template>
 
@@ -24,6 +25,12 @@ export default {
   data() {
     return {
       repos: []
+    }
+  },
+  props: {
+    browserName: {
+      type: String,
+      required: true
     }
   },
   methods: {
@@ -44,17 +51,14 @@ export default {
     let page = 2
     const self = this
     self.fetchData(loadDataNum, 1)
-
-    document.addEventListener('scroll', function() {
-      if (
-        Math.ceil(document.documentElement.scrollTop + window.innerHeight) ===
-        document.documentElement.offsetHeight
-      ) {
-        console.log('fetch!!!')
-        self.fetchData(loadDataNum, page)
-        page += 1
-      }
-    })
+    if (
+      Math.ceil(window.pageYOffset + window.innerHeight) ===
+      document.documentElement.offsetHeight
+    ) {
+      console.log('fetch!!!')
+      self.fetchData(loadDataNum, page)
+      page += 1
+    }
   }
 }
 </script>
